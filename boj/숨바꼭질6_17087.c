@@ -14,8 +14,6 @@ int gcd(int M, int N){
     }
 }
 
-
-
 int main(){
     int N, S; 
     int K;   

@@ -62,7 +62,6 @@ int main()
     }
 
 
-
     int k = N - 1;
     push(arr_tn[k]);
     pu(k);

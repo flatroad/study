@@ -1,0 +1,48 @@
+import sys
+
+def empty(sum, arr, k , j):
+    h=int(k//3*3)
+    hh=int(k//3*3+3)
+    w=int(j//3*3)
+    ww=int(j//3*3+3)
+    arr_y = []
+    for x in range(h, hh):
+        for y in range(w, ww):
+            arr_y.append(arr[x][y])
+    if(sum in arr_y):      
+        return False
+    else:
+        return True
+
+
+def arr_check(arr, k, j, m):
+    while(arr[k][j]!=0):
+        j=j+1
+        if(j==9):
+            k=k+1
+            j=0
+            if(k==9):
+                for r in arr:
+                    print(*r)
+                sys.exit()
+    arr_x = {i[j] for i in arr}
+    for sum in m-set(arr[k])&m-(arr_x):
+        if(empty(sum, arr, k , j)):
+            arr[k][j]=sum
+            arr_check(arr, k, j, m)
+            arr[k][j]=0
+
+        
+
+
+arr = [[0]*9]*9
+
+for x in range(9):
+    arr[x] = list(map(int, input().split()))
+
+k = 0
+y = 0
+
+m = set(range(1,10))
+
+arr_check(arr, k, y, m)

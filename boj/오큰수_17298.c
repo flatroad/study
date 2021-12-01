@@ -13,7 +13,6 @@ void pop(){
     top = top -1;
 }
 
-
 int main(){
 
     int N;

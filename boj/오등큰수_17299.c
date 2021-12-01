@@ -1,5 +1,5 @@
-#include <stdio.h>
-#define MAX 1000002
+include <stdio.h>
+define MAX 1000002
 
 int count[MAX];
 
